@@ -6,7 +6,15 @@ from pypdf import PdfReader
 from docx import Document
 
 st.set_page_config(page_title="محلل السيرة الذاتية الذكي", page_icon="📄", layout="wide")
-st.markdown('<style>html,body,[class*="css"]{direction:rtl;text-align:right;font-family:Arial,sans-serif}.stApp{background:#f7f9fc}h1,h2,h3{color:#133b4a}</style>', unsafe_allow_html=True)
+st.markdown("""<style>
+/* Keep the app right-to-left without overriding Streamlit's theme colors. */
+[data-testid="stAppViewContainer"] { direction: rtl; }
+[data-testid="stAppViewContainer"] p,
+[data-testid="stAppViewContainer"] label,
+[data-testid="stAppViewContainer"] h1,
+[data-testid="stAppViewContainer"] h2,
+[data-testid="stAppViewContainer"] h3 { text-align: right; }
+</style>""", unsafe_allow_html=True)
 st.title("📄 محلل السيرة الذاتية الذكي")
 st.caption("مشروع تعليمي باستخدام Python و NLP و TF-IDF — إعداد ألين عيد البقمي")
 st.info("النتيجة مقياس تشابه نصي وليست قرار توظيف أو حكمًا على كفاءة المرشح. لا ترفعي بيانات حساسة.")
